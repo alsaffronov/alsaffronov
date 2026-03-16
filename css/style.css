@@ -54,6 +54,25 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    #FFFFFF 0%,
+    rgba(255, 255, 255, 0.7) 25%,
+    rgba(255, 255, 255, 0.25) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 99;
 }
 
 a {
@@ -126,12 +145,12 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 16px 24px;
 }
 
 @media (min-width: 769px) {
   .header__container {
-    padding: 1.5rem 5rem;
+    padding: 24px 80px;
   }
 }
 
@@ -179,10 +198,24 @@ main {
   transition: opacity var(--transition-base);
 }
 
+.header__contact-button svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
 @media (min-width: 769px) {
   .header__contact-button {
     display: inline-flex;
-    font-size: 1.125rem;
+    padding: 0.933rem 1.333rem;
+    font-size: 0.933rem;
+    border-radius: 0.8rem;
+    gap: 0.667rem;
+  }
+
+  .header__contact-button svg {
+    width: 1.333rem;
+    height: 1.333rem;
   }
 }
 
@@ -277,7 +310,7 @@ main {
    =========================== */
 
 .works {
-  padding: 3rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   border-top: 1px solid var(--color-border);
 }
 
@@ -387,7 +420,7 @@ main {
    =========================== */
 
 .timeline {
-  padding: 5rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   border-top: 1px solid var(--color-border);
 }
 
@@ -438,7 +471,7 @@ main {
 .timeline__items {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 4rem;
 }
 
 @media (min-width: 769px) {
@@ -449,15 +482,7 @@ main {
 }
 
 .timeline__item {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-}
-
-@media (min-width: 769px) {
-  .timeline__item {
-    padding-top: 0;
-    border-top: none;
-  }
+  padding-top: 0;
 }
 
 .timeline__company {
@@ -474,6 +499,7 @@ main {
   .timeline__company {
     font-size: 2.25rem;
     letter-spacing: -0.007em;
+    margin-bottom: 1.6875rem;
   }
 }
 
@@ -481,6 +507,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+@media (min-width: 769px) {
+  .timeline__details {
+    gap: 1.125rem;
+  }
 }
 
 .timeline__role-row {
@@ -493,9 +525,9 @@ main {
 .timeline__role {
   font-family: var(--font-secondary);
   font-weight: 500;
-  font-size: 1.125rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: -0.011em;
   color: var(--color-navy);
 }
 
@@ -507,17 +539,18 @@ main {
   }
 }
 
-.timeline__level {
+.timeline__date {
   font-family: var(--font-secondary);
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.35;
-  letter-spacing: -0.011em;
-  color: var(--color-accent);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.543;
+  letter-spacing: -0.013em;
+  color: #34333E;
 }
 
 @media (min-width: 769px) {
-  .timeline__level {
+  .timeline__date {
+    font-weight: 500;
     font-size: 1.125rem;
     line-height: 1.2;
     letter-spacing: -0.01em;
