@@ -1,0 +1,483 @@
+/* ===========================
+   Case Paynet — Pixel Perfect
+   По макету Figma node 244:3176
+   =========================== */
+
+/* ---- Header (Figma: padding 32px 80px) ---- */
+.page-case--paynet .header__container {
+  padding: 16px 24px;
+}
+@media (min-width: 1440px) {
+  .page-case--paynet .header__container {
+    padding: 32px 80px;
+  }
+}
+
+
+/* Button: padding 15px 21px, border-radius 12.8px */
+.page-case--paynet .header__contact-button {
+  padding: 0.933rem 1.333rem;
+  border-radius: 12.8px;
+  font-size: 0.933rem;
+}
+
+/* ---- Hero: Figma layout_ZOMQAK = padding 40px 80px, centered ---- */
+.page-case--paynet .case__hero {
+  padding: 40px 16px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__hero {
+    padding: 40px 80px;
+  }
+}
+.page-case--paynet .case__cover {
+  border-radius: 0;
+  object-fit: cover;
+  max-width: 1280px;
+}
+
+/* ---- Content: как Whales — max-width 800px, padding 16px mobile / 0 desktop ---- */
+.page-case--paynet .case__content--paynet {
+  max-width: 50rem; /* 800px */
+  margin: 0 auto;
+  padding: 0 16px;
+  gap: 80px;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__content--paynet {
+    padding: 0;
+    gap: 5rem; /* 80px */
+  }
+}
+
+/* Title row + back button: структура как Whales (case.css) — relative + absolute left -4rem */
+
+/* Title: SF Pro Text 800, 32px (Figma) */
+.page-case--paynet .case__title--paynet {
+  font-family: var(--font-secondary);
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: -0.0175em;
+  color: #171624;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__title--paynet {
+    font-size: 2rem; /* 32px */
+  }
+}
+
+/* Back button: 40×40 Figma, border-radius 12px */
+.page-case--paynet .case__back-btn--paynet {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+/* ---- Section gap 16px (default), с модификаторами ---- */
+.page-case--paynet .case__section {
+  gap: 32px;
+}
+.page-case--paynet .case__section--gap-24 {
+  gap: 24px;
+}
+
+/* Inner wrapper: 32px gap между контентными блоками (Figma layout_DZ0J68/GPA8HV/A3TTEA/OV57GH) */
+.page-case--paynet .case__section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Sub-section within section-body (for merged Валидация mega-section) */
+.page-case--paynet .case__section-body > .case__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.page-case--paynet .case__section-body > .case__section--gap-24 {
+  gap: 24px;
+}
+
+/* Heading: 24px, 700, line-height 1.3, letter-spacing -2% */
+.page-case--paynet .case__heading {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #171624;
+}
+/* Figma style_QURX11: "Моя роль" heading — weight 500 */
+.page-case--paynet .case__heading--light {
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Body text: 16px, 400, line-height 1.6, color #171624 */
+.page-case--paynet .case__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #171624;
+}
+.page-case--paynet .case__text--accent {
+  color: #353442;
+}
+
+/* Roles: column, gap 12px, 16px, line-height 1.3 (Figma layout_J06GLS) */
+.page-case--paynet .case__roles--paynet {
+  flex-direction: column;
+  gap: 12px;
+}
+.page-case--paynet .case__roles--paynet li {
+  font-size: 1rem;
+  line-height: 1.3;
+  padding: 0 1px;
+}
+
+/* Goals: 16px, color #353442, numbered */
+.page-case--paynet .case__goals--paynet li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #353442;
+}
+
+/* Figma images: по умолчанию без скруглений */
+.page-case--paynet .case__figure--paynet {
+  margin: 0;
+}
+.page-case--paynet .case__figure--paynet img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+}
+/* Скриншот продукта — единственный с borderRadius: 24px по Figma */
+.page-case--paynet .case__figure--rounded img {
+  border-radius: 24px;
+}
+.page-case--paynet .case__figure--with-caption {
+  gap: 8px;
+}
+
+/* Results: 2+1 layout, cards padding 16px, gap 10px, border-radius 16px */
+.page-case--paynet .case__results--paynet {
+  gap: 12px;
+}
+.page-case--paynet .case__results-row {
+  gap: 12px;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__results-row {
+    flex-direction: row;
+  }
+}
+.page-case--paynet .case__result-item {
+  padding: 16px;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+  gap: 10px;
+}
+.page-case--paynet .case__result-num {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 500;
+  line-height: 1.19;
+  letter-spacing: -0.02em;
+  color: #ADACBA;
+}
+.page-case--paynet .case__result-text {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: #171624;
+}
+
+/* Subheading: 18px, 700 */
+.page-case--paynet .case__subheading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.page-case--paynet .case__subheading--small {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Data block gap */
+.page-case--paynet .case__data-block {
+  gap: 16px;
+}
+
+/* Data cards: padding 20px, border-radius 16px, gap 10px */
+.page-case--paynet .case__data-card {
+  padding: 20px;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #171624;
+  gap: 10px;
+}
+/* ---- Analysis cards: 01+02 row, 03 full (Figma layout_8GNY8A = row, gap 10px) ---- */
+.page-case--paynet .case__analysis-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.page-case--paynet .case__analysis-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__analysis-row {
+    flex-direction: row;
+  }
+  .page-case--paynet .case__analysis-row .case__data-card {
+    flex: 1;
+  }
+}
+
+/* ---- UX Test result cards: 4 in column (Figma layout_YJ7IHY = column, gap 10px) ---- */
+.page-case--paynet .case__test-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.page-case--paynet .case__test-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+}
+.page-case--paynet .case__test-result-text {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #171624;
+  margin: 0;
+}
+
+/* ---- Release results: 3 in column (Figma layout_XQ99JA = column, gap 12px) ---- */
+.page-case--paynet .case__release-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.page-case--paynet .case__release-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+}
+.page-case--paynet .case__data-num {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #AFAFAF;
+  flex-shrink: 0;
+}
+
+/* Numbered list (Figma layout_HSO82Q: gap 8px) */
+.page-case--paynet .case__list--numbered {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  counter-reset: num;
+}
+.page-case--paynet .case__list--numbered li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #353442;
+  counter-increment: num;
+}
+.page-case--paynet .case__list--numbered li::before {
+  content: counter(num) ".";
+  flex-shrink: 0;
+}
+
+/* Role text block */
+.page-case--paynet .case__text--role {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+/* ---- Image block with label (Figma layout_UTFRHY: column, gap 16px) ---- */
+.page-case--paynet .case__img-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.page-case--paynet .case__img-label {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.3;
+  color: #171624;
+}
+
+/* ---- Hypothesis blocks (Figma layout_R5445J: gap 24px) ---- */
+.page-case--paynet .case__hypothesis {
+  gap: 24px;
+}
+.page-case--paynet .case__hypothesis-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* ---- HI-FI sub-sections ---- */
+.page-case--paynet .case__hifi-sub {
+  gap: 16px;
+}
+.page-case--paynet .case__hifi-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+/* margin-top: 0 — spacing handled by .case__section-body gap: 32px (Figma layout_6QH4U2) */
+.page-case--paynet .case__hifi-sub + .case__hifi-sub {
+  margin-top: 0;
+}
+
+/* ---- Iteration cards (Figma: gap 12px, padding 20px, border-radius 16px, bg #F6F6F6) ---- */
+.page-case--paynet .case__iterations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.page-case--paynet .case__iteration-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: #F6F6F6;
+  border-radius: 16px;
+}
+.page-case--paynet .case__iteration-label {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #AFAFAF;
+}
+.page-case--paynet .case__iteration-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.page-case--paynet .case__iteration-list li {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #171624;
+}
+
+/* ---- A/B result cards (Paynet specific green) ---- */
+.page-case--paynet .case__ab-results {
+  gap: 12px;
+}
+.page-case--paynet .case__ab-row {
+  gap: 12px;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__ab-row {
+    flex-direction: row;
+  }
+}
+.page-case--paynet .case__ab-card {
+  padding: 20px;
+  border-radius: 16px;
+  gap: 10px;
+}
+.page-case--paynet .case__ab-card--wide {
+  flex: 1 1 100%;
+}
+.page-case--paynet .case__ab-num {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #72CC2A;
+}
+.page-case--paynet .case__ab-text {
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #171624;
+}
+
+/* ---- Caption under image ---- */
+.page-case--paynet .case__caption {
+  font-weight: 500;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.3;
+  color: #171624;
+}
+
+/* Thanks + Nav: Figma heading y=0, buttons y=56, heading height=24 → gap ≈ 32px */
+.page-case--paynet .case__thanks {
+  max-width: 50rem; /* 800px */
+  margin: 5rem auto 0;
+  padding: 0 1rem 5rem;
+  gap: 2rem; /* 32px */
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__thanks {
+    padding: 0 0 5rem;
+  }
+}
+.page-case--paynet .case__thanks-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #171624;
+}
+.page-case--paynet .case__nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__nav-buttons {
+    flex-direction: row;
+  }
+}
+.page-case--paynet .case__nav-btn {
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  gap: 10px;
+}
+.page-case--paynet .case__nav-btn--back {
+  background-color: rgba(23, 22, 36, 0.06);
+  color: #171624;
+}
+.page-case--paynet .case__nav-btn--next {
+  background-color: #171624;
+  color: #FFFFFF;
+}
+@media (min-width: 769px) {
+  .page-case--paynet .case__nav-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
