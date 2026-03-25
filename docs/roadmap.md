@@ -53,6 +53,16 @@
 
 ---
 
+## Этап 4.1. Блок «Мои концепты»
+
+- [x] Разметка секции: заголовок + сетка превью (десктоп: 2 колонки + полноширинный ряд; мобильная: 3 карточки в колонку) — pixel perfect по Figma ([десктоп](https://www.figma.com/design/dmZSfrgfvnSQgVizM5csR8/Untitled?node-id=383-2357), [мобильная](https://www.figma.com/design/dmZSfrgfvnSQgVizM5csR8/Untitled?node-id=387-6580))
+- [x] Ассеты: WebP из Figma, `loading="lazy"`, `width`/`height`
+- [x] Стили: отступы, типографика заголовка, `border-radius` 20px, gap 16px / 32px
+- [x] Stagger reveal для карточек (Intersection Observer)
+- [x] Lightbox по клику на превью концептов (как на страницах кейса)
+
+---
+
 ## Этап 5. Таймлайн опыта
 
 - [x] Разметка секции: заголовок + список элементов таймлайна
@@ -129,3 +139,4 @@
 - [ ] Оптимизировать вес страницы: минификация, сжатие ассетов
 - [ ] Проверить валидность HTML (W3C Validator)
 - [ ] Lighthouse-аудит: Performance, Accessibility, Best Practices, SEO
+- [x] Open Graph / Twitter Card: превью-картинка из Figma (`assets/img/og-preview.jpg`), мета-теги для шаринга ссылок

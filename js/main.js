@@ -16,6 +16,8 @@ const initReveal = () => {
 
   const staggerGroups = [
     '.works__cards',
+    '.concepts__stagger-desktop',
+    '.concepts__stagger-mobile',
     '.timeline__items',
   ];
 
@@ -100,24 +102,25 @@ const initLightbox = () => {
     triggerElement = null;
   };
 
-  document.querySelectorAll('.case__figure img').forEach((figImg) => {
+  const bindLightboxImage = (figImg) => {
     figImg.addEventListener('click', () => {
       const src = figImg.currentSrc || figImg.src;
       openLightbox(src, figImg.alt);
     });
 
     figImg.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const src = figImg.currentSrc || figImg.src;
-        openLightbox(src, figImg.alt);
-      }
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      const src = figImg.currentSrc || figImg.src;
+      openLightbox(src, figImg.alt);
     });
 
     figImg.setAttribute('tabindex', '0');
     figImg.setAttribute('role', 'button');
-    figImg.setAttribute('aria-label', figImg.alt + ' — нажмите для увеличения');
-  });
+    figImg.setAttribute('aria-label', `${figImg.alt} — нажмите для увеличения`);
+  };
+
+  document.querySelectorAll('.case__figure img, .concepts__figure img').forEach(bindLightboxImage);
 
   closeBtn.addEventListener('click', closeLightbox);
 
