@@ -140,4 +140,4 @@
 - [ ] Проверить валидность HTML (W3C Validator)
 - [ ] Lighthouse-аудит: Performance, Accessibility, Best Practices, SEO
 - [x] Open Graph / Twitter Card: превью-картинка из Figma (`assets/img/og-preview.jpg`), мета-теги для шаринга ссылок
-- [x] Доп. теги для превью в Telegram: `og:image:secure_url`, `og:image:type`, `image_src`, JSON-LD, `?v=` на картинке для сброса кеша
+- [x] Доп. теги для превью в Telegram: `og:image:secure_url`, `og:image:type`, `image_src`, JSON-LD; для шаринга отдельный файл `og-share.jpg` (абсолютный HTTPS без query в URL), `prefix` на `<html>`, критичные `og:*` в начале `<head>`, `robots.txt` Allow
