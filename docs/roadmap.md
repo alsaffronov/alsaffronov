@@ -92,6 +92,7 @@
 - [x] Стили (mobile-first): компоновка, типографика, отступы
 - [x] Стилизация CTA-блока: выделяющийся фон, крупный текст, кнопка
 - [x] Ссылки контактов: `mailto:`, `tel:`, ссылки на соцсети
+- [x] Telegram: `https://t.me/al_saffronov` (кнопки в хедере и футере на всех страницах)
 - [x] «Скачать CV» → PDF `assets/docs/aleksandr-safronov-cv.pdf`, открытие в новой вкладке (`target="_blank"`)
 - [x] Accessibility: `aria-label` для ссылок, фокус-состояния
 
