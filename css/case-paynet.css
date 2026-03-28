@@ -24,19 +24,30 @@
 /* ---- Hero: Figma layout_ZOMQAK = padding 40px 80px, centered ---- */
 .page-case--paynet .case__hero {
   padding: 40px 16px 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 @media (min-width: 769px) {
   .page-case--paynet .case__hero {
     padding: 40px 80px;
   }
 }
+.page-case--paynet .case__hero picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
 .page-case--paynet .case__cover {
   border-radius: 0;
   object-fit: cover;
+  display: block;
+  width: 100%;
   max-width: 1280px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---- Content: как Whales — max-width 800px, padding 16px mobile / 0 desktop ---- */

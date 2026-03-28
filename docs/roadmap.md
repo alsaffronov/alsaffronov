@@ -132,6 +132,7 @@
 - [x] Проверить клавиатурную навигацию по всему сайту (Tab, Enter, Escape)
 - [x] UI-ревью: исправлены плашки результатов (column layout, 2+1 grid), кнопка назад (40×40 icon), удалены неиспользуемые стили (socials, numbers)
 - [x] Дизайн-ревью case-paynet по Figma: crop продукта, border-radius 0 на все изображения кроме скриншота (24px), inner gap 32px, hypothesis gap 24px, объединение Валидация+A/B+A/B/C в одну секцию, удаление секции "Выявленные проблемы" (нет в Figma), gap 24px для "Анализ данных" и "Моя роль", Thanks gap 32px, HI-FI sub-section gap 32px
+- [x] case-paynet: обложка в hero — `width: 100%`, центрирование (`margin: auto`), hero как `block` + `picture` на всю ширину (без прилипания влево на широких экранах)
 - [x] Подзаголовки «Экран до изменений» — font-weight: 700 (bold)
 - [x] Ключевые проценты/метрики выделены `<strong>` в обоих кейсах (Paynet + Whales)
 - [x] Lightbox: увеличение изображений при клике (CSS + JS, Escape, backdrop-click, focus return, aria)
