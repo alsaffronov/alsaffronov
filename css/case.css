@@ -431,6 +431,38 @@
   }
 }
 
+/* ---- Figure hover: лёгкое «подрагивание» карточки (без пёстрых эффектов) ---- */
+.case__content .case__figure {
+  transform-origin: center center;
+  transition: transform 0.35s ease;
+}
+
+@keyframes case-figure-wiggle {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate3d(0, -2px, 0) rotate(-0.38deg);
+  }
+  40% {
+    transform: translate3d(0, -1px, 0) rotate(0.32deg);
+  }
+  60% {
+    transform: translate3d(0, -2px, 0) rotate(-0.18deg);
+  }
+  80%,
+  100% {
+    transform: translate3d(0, -2px, 0) rotate(0deg);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .case__content .case__figure:hover,
+  .case__content .case__figure:focus-within {
+    animation: case-figure-wiggle 0.55s ease-out forwards;
+  }
+}
+
 /* ---- Image caption ---- */
 
 .case__caption {
