@@ -30,7 +30,7 @@
   <title>Aleksandr S. — Product Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=optional" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -58,7 +58,9 @@
           alt="Фотография Александра — продуктовый дизайнер"
           width="104"
           height="104"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         >
         <div class="hero__content reveal">
           <p class="hero__description"><strong>Я&nbsp;Product&#8209;дизайнер</strong> с&nbsp;опытом <strong>3+&nbsp;лет,</strong> специализируюсь на&nbsp;финтех, <strong>Web3</strong> и&nbsp;<strong>DeFi&#8209;проектах.</strong><br><br>Спроектировал <strong>более 10&nbsp;коммерческих интерфейсов&nbsp;&mdash;</strong> от&nbsp;криптовалютных кошельков до&nbsp;платёжных платформ, которыми пользуются <strong>свыше&nbsp;200&nbsp;тысяч&nbsp;человек.</strong></p>
@@ -77,28 +79,28 @@
         </div>
       </div>
       <div class="works__cards">
-        <a href="case-paynet.html" class="works__card works__card--paynet reveal" tabindex="0" aria-label="Кейс Paynet Crypto — увеличение числа новых пользователей на 17%">
-          <picture>
-            <source media="(min-width: 769px)" srcset="assets/img/card-paynet-desktop.webp?v=7" width="552" height="413">
-            <img src="assets/img/card-paynet-mobile.webp?v=2" alt="Paynet Crypto — увеличение обменов на 32%" loading="lazy" width="345" height="325">
-          </picture>
-        </a>
         <a href="case-whales.html" class="works__card works__card--whales reveal" tabindex="0" aria-label="Кейс Whales Market — увеличение завершаемости сделок на 18п.п">
           <picture>
             <source media="(min-width: 769px)" srcset="assets/img/card-whales-desktop.webp" width="552" height="413">
-            <img src="assets/img/card-whales-mobile.webp" alt="Whales Market — увеличение завершаемости сделок на 18п.п" loading="lazy" width="345" height="325">
+            <img src="assets/img/card-whales-mobile.webp" alt="Whales Market — увеличение завершаемости сделок на 18п.п" loading="lazy" decoding="async" width="345" height="325">
+          </picture>
+        </a>
+        <a href="case-paynet.html" class="works__card works__card--paynet reveal" tabindex="0" aria-label="Кейс Paynet Crypto — увеличение числа новых пользователей на 17%">
+          <picture>
+            <source media="(min-width: 769px)" srcset="assets/img/card-paynet-desktop.webp?v=7" width="552" height="413">
+            <img src="assets/img/card-paynet-mobile.webp?v=2" alt="Paynet Crypto — увеличение обменов на 32%" loading="lazy" decoding="async" width="345" height="325">
           </picture>
         </a>
         <div class="works__card works__card--nda reveal" aria-label="Кейс под NDA">
           <picture>
             <source media="(min-width: 769px)" srcset="assets/img/card-nda1-desktop.webp" width="552" height="413">
-            <img src="assets/img/card-nda1-mobile.webp" alt="Кейс под NDA" loading="lazy" width="345" height="325">
+            <img src="assets/img/card-nda1-mobile.webp" alt="Кейс под NDA" loading="lazy" decoding="async" width="345" height="325">
           </picture>
         </div>
         <div class="works__card works__card--nda reveal" aria-label="Кейс под NDA">
           <picture>
             <source media="(min-width: 769px)" srcset="assets/img/card-nda2-desktop.webp" width="552" height="413">
-            <img src="assets/img/card-nda2-mobile.webp" alt="Кейс под NDA" loading="lazy" width="345" height="325">
+            <img src="assets/img/card-nda2-mobile.webp" alt="Кейс под NDA" loading="lazy" decoding="async" width="345" height="325">
           </picture>
         </div>
       </div>
@@ -114,13 +116,13 @@
         <div class="concepts__desktop">
           <div class="concepts__stagger-desktop">
             <figure class="concepts__figure concepts__figure--half reveal">
-              <img src="assets/img/concept-1-desktop.webp" alt="Концепт интерфейса — превью 1" width="552" height="413" loading="lazy">
+              <img src="assets/img/concept-1-desktop.webp" alt="Концепт интерфейса — превью 1" width="552" height="413" loading="lazy" decoding="async">
             </figure>
             <figure class="concepts__figure concepts__figure--half reveal">
-              <img src="assets/img/concept-2-desktop.webp" alt="Концепт интерфейса — превью 2" width="552" height="413" loading="lazy">
+              <img src="assets/img/concept-2-desktop.webp" alt="Концепт интерфейса — превью 2" width="552" height="413" loading="lazy" decoding="async">
             </figure>
             <figure class="concepts__figure concepts__figure--wide reveal">
-              <img src="assets/img/concept-cover-desktop.webp" alt="Концепт интерфейса — превью 3" width="1120" height="413" loading="lazy">
+              <img src="assets/img/concept-cover-desktop.webp" alt="Концепт интерфейса — превью 3" width="1120" height="413" loading="lazy" decoding="async">
             </figure>
           </div>
         </div>
@@ -128,13 +130,13 @@
         <div class="concepts__mobile">
           <div class="concepts__stagger-mobile">
             <figure class="concepts__figure reveal">
-              <img src="assets/img/concept-1-mobile.webp" alt="Концепт интерфейса — превью 1" width="345" height="258" loading="lazy">
+              <img src="assets/img/concept-1-mobile.webp" alt="Концепт интерфейса — превью 1" width="345" height="258" loading="lazy" decoding="async">
             </figure>
             <figure class="concepts__figure reveal">
-              <img src="assets/img/concept-2-mobile.webp" alt="Концепт интерфейса — превью 2" width="345" height="258" loading="lazy">
+              <img src="assets/img/concept-2-mobile.webp" alt="Концепт интерфейса — превью 2" width="345" height="258" loading="lazy" decoding="async">
             </figure>
             <figure class="concepts__figure reveal">
-              <img src="assets/img/concept-3-mobile.webp" alt="Концепт интерфейса — превью 3" width="345" height="258" loading="lazy">
+              <img src="assets/img/concept-3-mobile.webp" alt="Концепт интерфейса — превью 3" width="345" height="258" loading="lazy" decoding="async">
             </figure>
           </div>
         </div>

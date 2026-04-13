@@ -1,17 +1,39 @@
 'use strict';
 
-const STAGGER_DELAY = 120;
+const STAGGER_DELAY = 72;
 const OBSERVER_THRESHOLD = 0;
 const OBSERVER_MARGIN = '0px 0px -60px 0px';
+
+let revealObserver = null;
+let revealBreakpointListenerBound = false;
+
+const isDisplayedInLayoutTree = (el) => {
+  let node = el;
+  while (node && node !== document.documentElement) {
+    const st = window.getComputedStyle(node);
+    if (st.display === 'none') return false;
+    node = node.parentElement;
+  }
+  return true;
+};
 
 const initReveal = () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
+    if (revealObserver) {
+      revealObserver.disconnect();
+      revealObserver = null;
+    }
     document.querySelectorAll('.reveal').forEach((el) => {
       el.classList.add('reveal--visible');
+      el.style.transitionDelay = '';
     });
     return;
+  }
+
+  if (revealObserver) {
+    revealObserver.disconnect();
   }
 
   const staggerGroups = [
@@ -24,9 +46,11 @@ const initReveal = () => {
   staggerGroups.forEach((parentSelector) => {
     const parent = document.querySelector(parentSelector);
     if (!parent) return;
+    if (window.getComputedStyle(parent).display === 'none') return;
 
     const children = parent.querySelectorAll(':scope > .reveal');
     children.forEach((child, i) => {
+      if (child.classList.contains('reveal--visible')) return;
       child.style.transitionDelay = `${i * STAGGER_DELAY}ms`;
     });
   });
@@ -36,6 +60,7 @@ const initReveal = () => {
       if (!entry.isIntersecting) return;
 
       entry.target.classList.add('reveal--visible');
+      entry.target.style.transitionDelay = '';
       observer.unobserve(entry.target);
     });
   }, {
@@ -43,7 +68,20 @@ const initReveal = () => {
     rootMargin: OBSERVER_MARGIN,
   });
 
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  revealObserver = observer;
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    if (!isDisplayedInLayoutTree(el)) return;
+    if (el.classList.contains('reveal--visible')) return;
+    observer.observe(el);
+  });
+
+  if (!revealBreakpointListenerBound) {
+    revealBreakpointListenerBound = true;
+    window.matchMedia('(min-width: 769px)').addEventListener('change', () => {
+      initReveal();
+    });
+  }
 };
 
 const initHeaderHide = () => {
@@ -57,6 +95,8 @@ const initHeaderHide = () => {
     });
   }, {
     threshold: 0,
+    /* кнопка скрывается чуть раньше — меньше дёрганья у границы футера */
+    rootMargin: '0px 0px 96px 0px',
   });
 
   observer.observe(footer);

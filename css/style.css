@@ -33,7 +33,9 @@
 
 html {
   font-size: 4.07vw;
-  scroll-behavior: smooth;
+  /* auto: меньше нагрузки при скролле, чем smooth на уровне документа */
+  scroll-behavior: auto;
+  overscroll-behavior-y: contain;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -55,24 +57,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(
-    to bottom,
-    #FFFFFF 0%,
-    rgba(255, 255, 255, 0.7) 25%,
-    rgba(255, 255, 255, 0.25) 60%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 99;
+  overflow-x: clip;
 }
 
 a {
@@ -92,14 +77,14 @@ img {
 
 .reveal {
   opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal--visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -375,10 +360,7 @@ main {
   display: block;
   border-radius: 19.83px;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(#fff, #fff);
-  mask-image: linear-gradient(#fff, #fff);
-  will-change: transform;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base);
 }
 
 .works__card picture {
@@ -400,9 +382,16 @@ main {
   }
 }
 
-.works__card:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
+@media (hover: hover) and (pointer: fine) {
+  .works__card:hover {
+    transform: translate3d(0, -0.25rem, 0);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
+  }
+
+  .works__card--nda:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .works__card:focus-visible {
@@ -412,11 +401,6 @@ main {
 
 .works__card--nda {
   cursor: default;
-}
-
-.works__card--nda:hover {
-  transform: none;
-  box-shadow: none;
 }
 
 .works__card img {
@@ -495,8 +479,6 @@ main {
   margin: 0;
   border-radius: 1.25rem;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(#fff, #fff);
-  mask-image: linear-gradient(#fff, #fff);
 }
 
 .concepts__figure--half {
